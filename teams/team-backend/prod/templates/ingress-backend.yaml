@@ -8,6 +8,9 @@ metadata:
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     external-dns.alpha.kubernetes.io/hostname: {{.Values.spec.ingress.hostBack}}
     alb.ingress.kubernetes.io/group.name: {{ .Values.env }}-team-backend-ingress
+    alb.ingress.kubernetes.io/actions.default-rule: >
+      {"type":"fixed-response","fixedResponseConfig":{"contentType":"text/plain","statusCode":"404","messageBody":"ERROR"}}
+
 spec:
   ingressClassName: alb
   rules:
