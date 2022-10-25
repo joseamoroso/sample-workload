@@ -12,9 +12,11 @@ metadata:
       {"type":"fixed-response","fixedResponseConfig":{"contentType":"text/plain","statusCode":"404","messageBody":"Error"}}
 
 spec:
-  backend:
-    serviceName: default-rule
-    servicePort: use-annotation
+  defaultBackend:
+    service:
+      name: default-rule
+      port:
+        name: use-annotation
   ingressClassName: alb
   rules:
     - host: {{.Values.spec.ingress.hostBack}}
