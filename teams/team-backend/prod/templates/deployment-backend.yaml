@@ -20,7 +20,7 @@ spec:
         - name: TOKEN_SECRET
           valueFrom:
             secretKeyRef:
-              name: TOKEN_SECRET
+              name: secret-token
               key: secret_value
               optional: false # same as default; "mysecret" must exist
         - name: API_PORT
