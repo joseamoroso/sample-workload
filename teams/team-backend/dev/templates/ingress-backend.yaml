@@ -20,7 +20,8 @@ metadata:
                 "serviceName":"backend",
                 "servicePort":"80",
               }
-            ]      
+            ]
+          }      
         }
       }
 spec:
