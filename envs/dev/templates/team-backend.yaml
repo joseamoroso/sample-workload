@@ -18,6 +18,8 @@ spec:
       parameters:
       - name: spec.ingress.hostBack
         value: {{ .Values.spec.ingress.hostBack }}
+      - name: env
+        value: {{ .Values.env }}
   syncPolicy:
     automated:
       prune: true
