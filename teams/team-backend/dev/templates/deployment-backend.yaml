@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: {{ .Values.deployment.image }}:{{ .Values.deployment.tag }}
+        image: "{{ .Values.deployment.image }}:{{ .Values.deployment.tag }}"
         ports:
         - containerPort: 3000
         resources:
