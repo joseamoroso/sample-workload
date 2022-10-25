@@ -13,14 +13,6 @@ metadata:
     alb.ingress.kubernetes.io/conditions.devops-path: |
       {
         {
-          "field":"http-header",
-          "httpHeaderConfig":
-            {
-              "httpHeaderName": "X-Parse-REST-API-Key",
-              "values":["2f5ae96c-b558-4c7b-a590-a501ae1c3f6c"]
-            }
-        },
-        {
           "type":"forward",
           "forwardConfig":{
             "targetGroups":[
