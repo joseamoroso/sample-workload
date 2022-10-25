@@ -13,7 +13,6 @@ spec:
       labels:
         app: backend
     spec:
-      serviceAccountName: team-backend
       containers:
       - name: backend
         image: {{ .Values.deployment.image }}:{{ .Values.deployment.tag }}
