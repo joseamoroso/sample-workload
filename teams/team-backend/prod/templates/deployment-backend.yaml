@@ -17,16 +17,16 @@ spec:
       - name: backend
         image: {{ .Values.deployment.image }}:{{ .Values.deployment.tag }}
         env:
-        - name: TOKEN_SECRET
+        - name: "TOKEN_SECRET"
           valueFrom:
             secretKeyRef:
               name: secret-token
               key: secret_value
               optional: false # same as default; "mysecret" must exist
-        - name: API_PORT
-          value: 3000
-        - name: JWT_HEADER_NAME
-          value: x-jwt-kwy
+        - name: "API_PORT"
+          value: "3000"
+        - name: "JWT_HEADER_NAME"
+          value: "x-jwt-kwy"
         ports:
         - containerPort: 3000
         resources:
