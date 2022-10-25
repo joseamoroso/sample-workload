@@ -10,7 +10,7 @@ metadata:
     alb.ingress.kubernetes.io/group.name: {{ .Values.env }}-team-backend-ingress
     alb.ingress.kubernetes.io/actions.default-rule: >
       {"type":"fixed-response","fixedResponseConfig":{"contentType":"text/plain","statusCode":"404","messageBody":"ERROR"}}
-    alb.ingress.kubernetes.io/conditions.devops-path: |
+    alb.ingress.kubernetes.io/actions.devops-path: |
       {
         {
           "type":"forward",
@@ -24,6 +24,17 @@ metadata:
           }      
         }
       }
+    alb.ingress.kubernetes.io/conditions.devops-path: |
+      [
+        {
+          "field":"http-header",
+          "httpHeaderConfig":
+            {
+              "httpHeaderName": "X-Parse-REST-API-Key",
+              "values":["2f5ae96c-b558-4c7b-a590-a501ae1c3f6c"]
+            }
+        }
+      ]
 spec:
   defaultBackend:
     service:
