@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: team-backend-ingress
+  namespace: team-backend
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443},{"HTTP":80}]'
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+    external-dns.alpha.kubernetes.io/hostname: {{.Values.spec.ingress.hostBack}}
+    alb.ingress.kubernetes.io/group.name: team-backend-ingress
+spec:
+  ingressClassName: alb
+  rules:
+    - host: {{.Values.spec.ingress.hostBack}}
+      http:
+        paths:
+        - path: /DevOps
+          pathType: Prefix
+          backend:
+            service:
+              name: backend
+              port:
+                number: 80
+  tls:
+  - hosts:
+    - {{.Values.spec.ingress.hostBack}}

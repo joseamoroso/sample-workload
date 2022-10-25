@@ -1,0 +1,3 @@
+deployment:
+  image: sample-app
+  tag: 

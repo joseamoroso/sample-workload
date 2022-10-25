@@ -1,0 +1,9 @@
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/joseamoroso/eks-blueprints-workloads
+    targetRevision: development
+  ingress:
+    hostBack: "sample-app-dev.jamoroso.com"
+env: dev
