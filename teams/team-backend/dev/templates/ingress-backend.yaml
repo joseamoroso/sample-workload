@@ -10,19 +10,8 @@ metadata:
     alb.ingress.kubernetes.io/group.name: {{ .Values.env }}-team-backend-ingress
     alb.ingress.kubernetes.io/actions.default-rule: >
       {"type":"fixed-response","fixedResponseConfig":{"contentType":"text/plain","statusCode":"404","messageBody":"ERROR"}}
-    alb.ingress.kubernetes.io/actions.devops-path: |
-        {
-          "type":"forward",
-          "forwardConfig":{
-            "targetGroups":[
-              {
-                "serviceName":"backend",
-                "servicePort":"80",
-              }
-            ]
-          }      
-        }
-        
+    alb.ingress.kubernetes.io/actions.devops-path: >
+        {"type":"forward","forwardConfig":{"targetGroups":[{"serviceName":"backend","servicePort":"80"}]}}
     alb.ingress.kubernetes.io/conditions.devops-path: |
       [
         {
