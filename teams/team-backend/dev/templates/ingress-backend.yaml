@@ -11,7 +11,7 @@ metadata:
     alb.ingress.kubernetes.io/actions.default-rule: >
       {"type":"fixed-response","fixedResponseConfig":{"contentType":"text/plain","statusCode":"404","messageBody":"ERROR"}}
     alb.ingress.kubernetes.io/conditions.devops-path: |
-      [
+      {
         {
           "field":"http-header",
           "httpHeaderConfig":
@@ -30,7 +30,7 @@ metadata:
               }
             ]      
         }
-      ]
+      }
 spec:
   defaultBackend:
     service:
