@@ -24,7 +24,7 @@ spec:
               key: secret_value
               optional: false # same as default; "mysecret" must exist
         - name: "API_PORT"
-          value: "3000"
+          value: 3000
         - name: "JWT_HEADER_NAME"
           value: "x-jwt-kwy"
         ports:
@@ -32,7 +32,7 @@ spec:
         resources:
           requests:
             memory: 512M
-            cpu: 0.5
+            cpu: 0.25
           limits:
             memory: 1024M
-            cpu: 1
+            cpu: 0.5
