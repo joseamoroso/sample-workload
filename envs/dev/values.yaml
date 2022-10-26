@@ -5,5 +5,5 @@ spec:
     repoURL: https://github.com/joseamoroso/sample-workload
     targetRevision: development
   ingress:
-    hostBack: "sample-app-dev.jamoroso.com"
+    hostBack: "eks-sample-app-dev.jamoroso.com"
 env: dev
