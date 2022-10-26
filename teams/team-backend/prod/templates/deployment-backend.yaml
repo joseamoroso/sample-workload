@@ -16,6 +16,7 @@ spec:
       containers:
       - name: backend
         image: {{ .Values.deployment.image }}:{{ .Values.deployment.tag }}
+        imagePullPolicy: Always
         env:
         - name: "TOKEN_SECRET"
           valueFrom:
